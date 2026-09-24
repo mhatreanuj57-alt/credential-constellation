@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <title>Credential Constellation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="hero">
+      <p class="eyebrow"><span></span> A living record of learning</p>
+      <div class="hero-copy">
+        <h1 class="experimental-title">Credential<br /><em>Constellation.</em></h1>
+        <p class="intro">A curated collection of certificates, badges, and hands-on milestones across applied AI, data science, and modern developer tools.</p>
+      </div>
+      <div class="orbit" aria-hidden="true">
+        <i></i><i></i><i></i><b>25<br /><small>signals</small></b>
+      </div>
+      <dl class="stats" aria-label="Collection statistics">
+        <div><dt id="credential-count">25</dt><dd>credentials</dd></div>
+        <div><dt>5</dt><dd>learning paths</dd></div>
+        <div><dt>4</dt><dd>providers</dd></div>
+      </dl>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Credential filters">
+        <div class="filter-label">Explore by signal</div>
+        <div class="filters" role="group" aria-label="Filter credentials">
+          <button class="filter active" data-filter="all">All <span>25</span></button>
+          <button class="filter" data-filter="certificate">Certificates <span>16</span></button>
+          <button class="filter" data-filter="badge">Badges <span>5</span></button>
+          <button class="filter" data-filter="sticker">Milestones <span>3</span></button>
+        </div>
+        <label class="search"><span class="sr-only">Search credentials</span><input type="search" id="search" placeholder="Search the constellation" /><span>⌕</span></label>
+      </section>
+
+      <section class="collection" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> The collection</p>
+          <h2 id="collection-title">From curiosity<br />to capability.</h2>
+          <p id="results" class="results">Showing all 25 credentials</p>
+        </div>
+        <div class="grid" id="credential-grid"></div>
+      </section>
+
+      <section class="pathways">
+        <p class="eyebrow"><span></span> Learning terrain</p>
+        <div class="pathway-list">
+          <article><span>01</span><h3>Generative AI</h3><p>Foundations, fluency, prompting and large language models.</p></article>
+          <article><span>02</span><h3>Claude &amp; MCP</h3><p>Building with Claude, APIs, code workflows and context protocols.</p></article>
+          <article><span>03</span><h3>Data Science</h3><p>Python, visualization and practical data science essentials.</p></article>
+          <article><span>04</span><h3>IBM Granite</h3><p>Exploring enterprise models, classification and applied AI tools.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer><p>Built as a personal learning archive.</p><a href="#top">Back to orbit ↑</a></footer>
+
+    <dialog id="credential-dialog" aria-labelledby="dialog-title">
+      <button class="close" id="close-dialog" aria-label="Close preview">×</button>
+      <div class="dialog-image"><img id="dialog-img" alt="" /></div>
+      <div class="dialog-copy"><p class="eyebrow"><span></span> Credential preview</p><h2 id="dialog-title"></h2><p id="dialog-meta"></p><a id="open-image" target="_blank" rel="noreferrer">Open full image ↗</a></div>
+    </dialog>
+    <script src="app.js"></script>
+  </body>
+</html>
