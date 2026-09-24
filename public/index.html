@@ -58,6 +58,25 @@
           <article><span>04</span><h3>IBM Granite</h3><p>Exploring enterprise models, classification and applied AI tools.</p></article>
         </div>
       </section>
+
+      <section class="skills-atlas" aria-labelledby="skills-title">
+        <div class="skills-heading">
+          <div><p class="eyebrow"><span></span> Codex capability atlas</p><h2 id="skills-title">471 skills.<br /><i>One working mind.</i></h2></div>
+          <p>Every installed Codex workflow in this setup—covering engineering discipline, design systems, cloud platforms, automation, AI, and developer tooling.</p>
+        </div>
+        <dl class="skills-stats" aria-label="Codex skills statistics">
+          <div><dt id="skills-total">471</dt><dd>registered skills</dd></div>
+          <div><dt id="skills-sources">49</dt><dd>source collections</dd></div>
+          <div><dt>∞</dt><dd>model-agnostic workflows</dd></div>
+        </dl>
+        <div class="skills-controls">
+          <label class="skills-search"><span class="sr-only">Search Codex skills</span><input id="skills-search" type="search" placeholder="Search a Codex skill" /></label>
+          <label class="skills-select"><span class="sr-only">Filter by source collection</span><select id="skills-source"><option value="">All source collections</option></select></label>
+          <a class="inventory-link" href="codex-installed-skills.md" target="_blank" rel="noreferrer">Open full inventory ↗</a>
+        </div>
+        <p id="skills-results" class="skills-results" aria-live="polite">Loading installed skills…</p>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
     </main>
 
     <footer><p>Built as a personal learning archive.</p><a href="#top">Back to orbit ↑</a></footer>
@@ -88,6 +107,33 @@
       document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
       dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
       render();
+
+      const skillsGrid = document.querySelector('#skills-grid');
+      const skillsResults = document.querySelector('#skills-results');
+      const skillsSearch = document.querySelector('#skills-search');
+      const skillsSource = document.querySelector('#skills-source');
+      const escapeHTML = value => String(value).replace(/[&<>'"]/g, character => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[character]);
+      let codexSkills = [];
+      function renderSkills() {
+        const query = skillsSearch.value.trim().toLowerCase();
+        const source = skillsSource.value;
+        const visible = codexSkills.filter(skill => (!source || skill.source === source) && `${skill.name} ${skill.source}`.toLowerCase().includes(query));
+        skillsResults.textContent = `Showing ${visible.length} of ${codexSkills.length} installed skills`;
+        skillsGrid.innerHTML = visible.length ? visible.map(skill => `<article class="skill-card"><h3>${escapeHTML(skill.name)}</h3><p>${escapeHTML(skill.source)}</p></article>`).join('') : '<p class="skills-empty">No matching skill found. Try a broader search.</p>';
+      }
+      fetch('codex-installed-skills.md').then(response => { if (!response.ok) throw new Error('Inventory unavailable'); return response.text(); }).then(markdown => {
+        const sources = markdown.split(/^## /m).slice(1).map(section => {
+          const [heading, ...lines] = section.split(/\r?\n/);
+          return { source: heading.replace(/ \(\d+\)\s*$/, ''), skills: lines.map(line => line.match(/^- (.+)$/)).filter(Boolean).map(match => match[1]) };
+        }).filter(group => group.skills.length);
+        codexSkills = sources.flatMap(group => group.skills.map(name => ({ name, source: group.source })));
+        document.querySelector('#skills-total').textContent = codexSkills.length;
+        document.querySelector('#skills-sources').textContent = sources.length;
+        skillsSource.innerHTML += sources.map(group => `<option value="${escapeHTML(group.source)}">${escapeHTML(group.source)} (${group.skills.length})</option>`).join('');
+        renderSkills();
+      }).catch(() => { skillsResults.textContent = 'The skill inventory could not be loaded.'; });
+      skillsSearch.addEventListener('input', renderSkills);
+      skillsSource.addEventListener('change', renderSkills);
     </script>
   </body>
 </html>
