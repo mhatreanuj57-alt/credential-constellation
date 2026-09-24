@@ -5,7 +5,7 @@ A locally runnable, single-page showcase for certificates, badges, and learning 
 ## Preview locally
 
 ```powershell
-node server.mjs
+node scripts/server.mjs
 ```
 
 Then open http://127.0.0.1:4173.
