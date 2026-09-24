@@ -1,6 +1,6 @@
 # Credential Constellation
 
-A locally runnable, single-page showcase for certificates, badges, and learning milestones.
+A locally runnable, single-page showcase for certificates, badges, and learning milestones. Static browser assets live in `public/` so the site can deploy directly to Vercel.
 
 ## Preview locally
 

@@ -2,7 +2,7 @@ import { createReadStream, existsSync } from 'node:fs';
 import { createServer } from 'node:http';
 import { extname, join, normalize } from 'node:path';
 
-const root = process.cwd();
+const root = join(process.cwd(), 'public');
 const types = { '.html':'text/html; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.css':'text/css; charset=utf-8', '.png':'image/png', '.ico':'image/x-icon' };
 createServer((request, response) => {
   const path = normalize(join(root, request.url === '/' ? 'index.html' : decodeURIComponent(request.url))).replace(root, '');
