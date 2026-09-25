@@ -25,10 +25,10 @@
         <p class="intro">A curated collection of certificates, badges, and hands-on milestones across applied AI, data science, and modern developer tools.</p>
       </div>
       <div class="orbit" aria-hidden="true">
-        <i></i><i></i><i></i><b>25<br /><small>signals</small></b>
+        <i></i><i></i><i></i><b>26<br /><small>signals</small></b>
       </div>
       <dl class="stats" aria-label="Collection statistics">
-        <div><dt id="credential-count">25</dt><dd>credentials</dd></div>
+        <div><dt id="credential-count">26</dt><dd>credentials</dd></div>
         <div><dt>5</dt><dd>learning paths</dd></div>
         <div><dt>4</dt><dd>providers</dd></div>
       </dl>
@@ -38,8 +38,8 @@
       <section class="controls" aria-label="Credential filters">
         <div class="filter-label">Explore by signal</div>
         <div class="filters" role="group" aria-label="Filter credentials">
-          <button class="filter active" data-filter="all">All <span>25</span></button>
-          <button class="filter" data-filter="certificate">Certificates <span>16</span></button>
+          <button class="filter active" data-filter="all">All <span>26</span></button>
+          <button class="filter" data-filter="certificate">Certificates <span>17</span></button>
           <button class="filter" data-filter="badge">Badges <span>5</span></button>
           <button class="filter" data-filter="sticker">Milestones <span>3</span></button>
         </div>
@@ -50,7 +50,7 @@
         <div class="section-heading">
           <p class="eyebrow"><span></span> The collection</p>
           <h2 id="collection-title">From curiosity<br />to capability.</h2>
-          <p id="results" class="results">Showing all 25 credentials</p>
+          <p id="results" class="results">Showing all 26 credentials</p>
         </div>
         <div class="grid" id="credential-grid"></div>
       </section>
@@ -94,7 +94,7 @@
     </dialog>
     <script>
       const credentials = [
-        ['AI Fluency for Educators','Anthropic','certificate','ai-fluency-educators-cert.png'],['AI Fluency for Students','Anthropic','certificate','ai-fluency-students-cert.png'],['AI Fundamentals','IBM','certificate','ai-fundamentals-cert.png'],['Claude AI Fluency','Anthropic','certificate','claude-ai-fluency-cert.png'],['Claude API','Anthropic','certificate','claude-api-cert.png'],['Claude Fundamentals','Anthropic','certificate','claude-cert.png'],['Claude Code 101','Anthropic','certificate','claude-code-101-cert.png'],['Claude Code in Action','Anthropic','certificate','claude-code-in-action-cert.png'],['Claude Cowork','Anthropic','certificate','claude-cowork-cert.png'],['Claude Platform 101','Anthropic','certificate','claude-platform-101-cert.png'],['Introduction to Generative AI','Google','badge','google-intro-genai-badge.png'],['Introduction to Large Language Models','Google','badge','google-intro-llm-badge.png'],['Data Science 101','IBM','certificate','ibm-data-science-101-cert.png'],['Data Science','IBM','badge','ibm-data-science-badge.png'],['Data Science Foundations','IBM','certificate','ibm-data-science-cert.png'],['Data Visualization','IBM','certificate','ibm-dataviz-cert.png'],['Generative AI Essentials','IBM','badge','ibm-genai-essentials-badge.png'],['Generative AI Essentials','IBM','certificate','ibm-genai-essentials-cert.png'],['Granite Classification','IBM','sticker','ibm-granite-classify-sticker.png'],['Granite','IBM','sticker','ibm-granite-sticker.png'],['Large Language Models','IBM','sticker','ibm-llm-sticker.png'],['Prompt Engineering','IBM','badge','ibm-prompt-badge.png'],['Python for Data Science','IBM','certificate','ibm-python-cert.png'],['MCP Advanced','Anthropic','certificate','mcp-advanced-cert.png'],['MCP Introduction','Anthropic','certificate','mcp-intro-cert.png']
+        ['AI Fluency for Educators','Anthropic','certificate','ai-fluency-educators-cert.png'],['AI Fluency for Students','Anthropic','certificate','ai-fluency-students-cert.png'],['AI Fundamentals','IBM','certificate','ai-fundamentals-cert.png'],['Claude AI Fluency','Anthropic','certificate','claude-ai-fluency-cert.png'],['Claude API','Anthropic','certificate','claude-api-cert.png'],['Claude Fundamentals','Anthropic','certificate','claude-cert.png'],['Claude Code 101','Anthropic','certificate','claude-code-101-cert.png'],['Claude Code in Action','Anthropic','certificate','claude-code-in-action-cert.png'],['Claude Cowork','Anthropic','certificate','claude-cowork-cert.png'],['Claude Platform 101','Anthropic','certificate','claude-platform-101-cert.png'],['Introduction to Generative AI','Google','badge','google-intro-genai-badge.png'],['Introduction to Large Language Models','Google','badge','google-intro-llm-badge.png'],['Agile Methodologies','IBM Career Education Program','certificate','ibm-agile-methodologies-cert.png'],['Data Science 101','IBM','certificate','ibm-data-science-101-cert.png'],['Data Science','IBM','badge','ibm-data-science-badge.png'],['Data Science Foundations','IBM','certificate','ibm-data-science-cert.png'],['Data Visualization','IBM','certificate','ibm-dataviz-cert.png'],['Generative AI Essentials','IBM','badge','ibm-genai-essentials-badge.png'],['Generative AI Essentials','IBM','certificate','ibm-genai-essentials-cert.png'],['Granite Classification','IBM','sticker','ibm-granite-classify-sticker.png'],['Granite','IBM','sticker','ibm-granite-sticker.png'],['Large Language Models','IBM','sticker','ibm-llm-sticker.png'],['Prompt Engineering','IBM','badge','ibm-prompt-badge.png'],['Python for Data Science','IBM','certificate','ibm-python-cert.png'],['MCP Advanced','Anthropic','certificate','mcp-advanced-cert.png'],['MCP Introduction','Anthropic','certificate','mcp-intro-cert.png']
       ].map(([title, provider, type, image]) => ({ title, provider, type, image }));
       const grid = document.querySelector('#credential-grid');
       const result = document.querySelector('#results');
