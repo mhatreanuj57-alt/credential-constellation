@@ -68,3 +68,7 @@ html, body { max-width:100%; overflow-x:clip; }
 .hero { overflow-x:clip; }.stats div { min-width:0; }
 @media (max-width:760px) { h1 { max-width:100%; font-size:clamp(42px,13vw,72px); overflow-wrap:anywhere; } }
 @media (max-width:760px) { .identity-line { width:100%; gap:8px; margin:0; }.identity-avatar { width:38px; height:38px; }.identity-line span { max-width:145px; font-size:8px; }.identity-portfolio { margin-left:auto; white-space:nowrap; } }
+
+/* The orbit is artwork, so it needs a clear zone of its own—not the wordmark's. */
+@media (min-width:761px) { .orbit { top:320px; right:auto; left:clamp(185px,22vw,295px); width:220px; height:220px; }.orbit b { font-size:46px; } }
+@media (max-width:760px) { .orbit { display:none; } }
