@@ -12,7 +12,7 @@ Then open http://127.0.0.1:4173.
 
 ## Features
 
-- 25 original certificate and badge images arranged in a responsive gallery
+- 29 certificate, badge, and milestone images arranged in a responsive gallery
 - Filters for certificates, badges, and milestones
 - Search and full-size image previews
 - No build step or external runtime dependencies
