@@ -74,6 +74,10 @@ html, body { max-width:100%; overflow-x:clip; }
 @media (max-width:760px) { .orbit { display:none; } }
 
 /* Poster typography: expressive display, calm labels and credential names. */
+footer { flex-wrap:wrap; gap:24px; }
+.footer-links { flex-wrap:wrap; }
+.footer-initials { flex-basis:100%; padding-top:24px; text-align:center; font:800 clamp(64px,8vw,112px)/1.1 Syne,sans-serif; letter-spacing:-.08em; }
+.footer-initials i { color:var(--orange); font-style:normal; }
 .hero { overflow:visible; min-height:0; padding-bottom:45px; }
 .hero-copy { padding-top:50px; }
 .experimental-title { max-width:none; margin:0; font-size:clamp(80px,12vw,164px); line-height:.86; letter-spacing:-.085em; }
