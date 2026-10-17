@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#07111f" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Credential Constellation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="hero">
+      <div class="identity-line">
+        <a class="identity-avatar" href="https://github.com/a18-n03" target="_blank" rel="noreferrer"><img src="https://avatars.githubusercontent.com/u/210357795?v=4" alt="Anuj Mhatre" /></a>
+        <div><strong>Anuj Mhatre</strong><span>B.Tech CSE (AI &amp; ML) · CSMU, Navi Mumbai</span></div>
+        <a class="identity-portfolio" href="https://anujmhatre.me" target="_blank" rel="noreferrer">Portfolio ↗</a>
+      </div>
+      <p class="eyebrow"><span></span> A learning archive by a18-n03</p>
+      <div class="hero-copy">
+        <h1 class="experimental-title" aria-label="Credential Constellation">
+          <span class="title-line" aria-hidden="true">Creden</span>
+          <span class="title-line title-offset" aria-hidden="true"><span class="title-cut">tial</span><em>Constellation<span class="title-star">✳</span></em></span>
+        </h1>
+        <div class="hero-footnote">
+          <div class="orbit" aria-hidden="true"><i></i><i></i><i></i><b>30<br /><small>signals</small></b></div>
+        <p class="intro">A curated collection of certificates, badges, and hands-on milestones across applied AI, data science, and modern developer tools.</p>
+        </div>
+      </div>
+      <dl class="stats" aria-label="Collection statistics">
+        <div><dt id="credential-count">30</dt><dd>credentials</dd></div>
+        <div><dt>4</dt><dd>learning paths</dd></div>
+        <div><dt>6</dt><dd>providers</dd></div>
+      </dl>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Credential filters">
+        <div class="filter-label">Explore by signal</div>
+        <div class="filters" role="group" aria-label="Filter credentials">
+          <button class="filter active" data-filter="all">All <span>30</span></button>
+          <button class="filter" data-filter="certificate">Certificates <span>22</span></button>
+          <button class="filter" data-filter="badge">Badges <span>5</span></button>
+          <button class="filter" data-filter="sticker">Milestones <span>3</span></button>
+        </div>
+        <label class="search"><span class="sr-only">Search credentials</span><input type="search" id="search" placeholder="Search the constellation" /><span>⌕</span></label>
+      </section>
+
+      <section class="collection" aria-labelledby="collection-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span></span> The collection</p>
+          <h2 id="collection-title">From <i>curiosity</i><br />to <span class="type-block">capability.</span></h2>
+          <p id="results" class="results">Showing all 30 credentials</p>
+        </div>
+        <div class="grid" id="credential-grid"></div>
+      </section>
+
+      <section class="pathways">
+        <p class="eyebrow"><span></span> Learning terrain</p>
+        <div class="pathway-list">
+          <article><span>01</span><h3>Generative AI</h3><p>Foundations, fluency, prompting and large language models.</p></article>
+          <article><span>02</span><h3>Claude &amp; MCP</h3><p>Building with Claude, APIs, code workflows and context protocols.</p></article>
+          <article><span>03</span><h3>Data Science</h3><p>Python, visualization and practical data science essentials.</p></article>
+          <article><span>04</span><h3>IBM Granite</h3><p>Exploring enterprise models, classification and applied AI tools.</p></article>
+        </div>
+      </section>
+
+      <section class="skills-atlas" aria-labelledby="skills-title">
+        <div class="skills-heading">
+          <div><p class="eyebrow"><span></span> Codex capability atlas</p><h2 id="skills-title"><span class="type-outline">471</span> skills.<br /><i>One working mind.</i></h2></div>
+          <p>Every installed Codex workflow in this setup—covering engineering discipline, design systems, cloud platforms, automation, AI, and developer tooling.</p>
+        </div>
+        <dl class="skills-stats" aria-label="Codex skills statistics">
+          <div><dt id="skills-total">471</dt><dd>registered skills</dd></div>
+          <div><dt id="skills-sources">49</dt><dd>source collections</dd></div>
+          <div><dt>∞</dt><dd>model-agnostic workflows</dd></div>
+        </dl>
+        <div class="skills-controls">
+          <label class="skills-search"><span class="sr-only">Search Codex skills</span><input id="skills-search" type="search" placeholder="Search a Codex skill" /></label>
+          <label class="skills-select"><span class="sr-only">Filter by source collection</span><select id="skills-source"><option value="">All source collections</option></select></label>
+          <a class="inventory-link" href="codex-installed-skills.md" target="_blank" rel="noreferrer">Open full inventory ↗</a>
+        </div>
+        <p id="skills-results" class="skills-results" aria-live="polite">Loading installed skills…</p>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Built as a personal learning archive.</p>
+      <div class="footer-links"><a href="https://linkedin.com/in/anuj-mhatre-031807ma" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="#top">Back to orbit ↑</a></div>
+      <p class="footer-initials"><span class="sr-only">Anuj Mhatre</span><span aria-hidden="true">AM<i>.</i></span></p>
+    </footer>
+
+    <dialog id="credential-dialog" aria-labelledby="dialog-title">
+      <button class="close" id="close-dialog" aria-label="Close preview">×</button>
+      <div class="dialog-image"><img id="dialog-img" alt="" /></div>
+      <div class="dialog-copy"><p class="eyebrow"><span></span> Credential preview</p><h2 id="dialog-title"></h2><p id="dialog-meta"></p><a id="open-image" target="_blank" rel="noreferrer">Open full image ↗</a></div>
+    </dialog>
+    <script>
+      const credentials = [
+        ['AWS Hackathon Participation (CSMU)','AWS Builder Center','certificate','aws-cloud-club-csmu-hackathon-cert.png'],
+        ['AWS Workshop Participation (CSMU)','AWS Builder Center','certificate','aws-cloud-club-csmu-workshop-cert.png'],
+        ['AI Fluency for Educators','Anthropic','certificate','ai-fluency-educators-cert.png'],['AI Fluency for Students','Anthropic','certificate','ai-fluency-students-cert.png'],['AI Fundamentals','IBM','certificate','ai-fundamentals-cert.png'],['AWS Certified Data Engineer - Associate Exam Prep','AWS Training & Certification','certificate','aws-data-engineer-associate-cert.png'],['AWS Cloud Practitioner Essentials','AWS Training & Certification','certificate','aws-cloud-practitioner-essentials-cert.png'],['Claude AI Fluency','Anthropic','certificate','claude-ai-fluency-cert.png'],['Claude API','Anthropic','certificate','claude-api-cert.png'],['Claude Fundamentals','Anthropic','certificate','claude-cert.png'],['Claude Code 101','Anthropic','certificate','claude-code-101-cert.png'],['Claude Code in Action','Anthropic','certificate','claude-code-in-action-cert.png'],['Claude Cowork','Anthropic','certificate','claude-cowork-cert.png'],['Claude Platform 101','Anthropic','certificate','claude-platform-101-cert.png'],['Introduction to Generative AI','Google','badge','google-intro-genai-badge.png'],['Introduction to Large Language Models','Google','badge','google-intro-llm-badge.png'],['Agile Methodologies','IBM Career Education Program','certificate','ibm-agile-methodologies-cert.png'],['Data Science 101','IBM','certificate','ibm-data-science-101-cert.png'],['Data Science','IBM','badge','ibm-data-science-badge.png'],['Data Science Foundations','IBM','certificate','ibm-data-science-cert.png'],['Data Visualization','IBM','certificate','ibm-dataviz-cert.png'],['Generative AI Essentials','IBM','badge','ibm-genai-essentials-badge.png'],['Generative AI Essentials','IBM','certificate','ibm-genai-essentials-cert.png'],['Granite Classification','IBM','sticker','ibm-granite-classify-sticker.png'],['Granite','IBM','sticker','ibm-granite-sticker.png'],['Large Language Models','IBM','sticker','ibm-llm-sticker.png'],['Prompt Engineering','IBM','badge','ibm-prompt-badge.png'],['Python for Data Science','IBM','certificate','ibm-python-cert.png'],['MCP Advanced','Anthropic','certificate','mcp-advanced-cert.png'],['MCP Introduction','Anthropic','certificate','mcp-intro-cert.png']
+      ].map(([title, provider, type, image]) => ({ title, provider, type, image }));
+      const grid = document.querySelector('#credential-grid');
+      const result = document.querySelector('#results');
+      const search = document.querySelector('#search');
+      const dialog = document.querySelector('#credential-dialog');
+      let activeFilter = 'all';
+      function render() {
+        const query = search.value.trim().toLowerCase();
+        const visible = credentials.filter(item => (activeFilter === 'all' || item.type === activeFilter) && `${item.title} ${item.provider}`.toLowerCase().includes(query));
+        result.textContent = visible.length === credentials.length ? `Showing all ${credentials.length} credentials` : `Showing ${visible.length} of ${credentials.length} credentials`;
+        grid.innerHTML = visible.length ? visible.map((item, index) => `<article class="card" style="animation-delay:${Math.min(index * 30, 300)}ms" data-image="assets/credentials/${item.image}" data-title="${item.title}" data-meta="${item.provider} · ${item.type}"><img src="assets/credentials/${item.image}" alt="${item.title} from ${item.provider}" loading="lazy"><div class="card-info"><span class="tag ${item.type}">${item.type}</span><h3>${item.title}</h3><p>${item.provider}</p></div></article>`).join('') : '<p class="empty">No signal found. Try another search.</p>';
+      }
+      document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { activeFilter = button.dataset.filter; document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); render(); }));
+      search.addEventListener('input', render);
+      grid.addEventListener('click', event => { const card = event.target.closest('.card'); if (!card) return; document.querySelector('#dialog-img').src = card.dataset.image; document.querySelector('#dialog-img').alt = card.dataset.title; document.querySelector('#dialog-title').textContent = card.dataset.title; document.querySelector('#dialog-meta').textContent = card.dataset.meta; document.querySelector('#open-image').href = card.dataset.image; dialog.showModal(); });
+      document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+      render();
+
+      const skillsGrid = document.querySelector('#skills-grid');
+      const skillsResults = document.querySelector('#skills-results');
+      const skillsSearch = document.querySelector('#skills-search');
+      const skillsSource = document.querySelector('#skills-source');
+      const escapeHTML = value => String(value).replace(/[&<>'"]/g, character => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;' })[character]);
+      let codexSkills = [];
+      function renderSkills() {
+        const query = skillsSearch.value.trim().toLowerCase();
+        const source = skillsSource.value;
+        const visible = codexSkills.filter(skill => (!source || skill.source === source) && `${skill.name} ${skill.source}`.toLowerCase().includes(query));
+        skillsResults.textContent = `Showing ${visible.length} of ${codexSkills.length} installed skills`;
+        skillsGrid.innerHTML = visible.length ? visible.map(skill => {
+          const repo = skill.source.includes('/') ? `https://github.com/${skill.source}` : 'codex-installed-skills.md';
+          const destination = skill.source.includes('/') ? `Open ${skill.source} on GitHub` : 'Open the local and bundled skill inventory';
+          return `<a class="skill-card" href="${escapeHTML(repo)}" target="_blank" rel="noreferrer" aria-label="${escapeHTML(destination)}"><h3>${escapeHTML(skill.name)}</h3><p>${escapeHTML(skill.source)} <span>↗</span></p></a>`;
+        }).join('') : '<p class="skills-empty">No matching skill found. Try a broader search.</p>';
+      }
+      fetch('codex-installed-skills.md').then(response => { if (!response.ok) throw new Error('Inventory unavailable'); return response.text(); }).then(markdown => {
+        const sources = markdown.split(/^## /m).slice(1).map(section => {
+          const [heading, ...lines] = section.split(/\r?\n/);
+          return { source: heading.replace(/ \(\d+\)\s*$/, ''), skills: lines.map(line => line.match(/^- (.+)$/)).filter(Boolean).map(match => match[1]) };
+        }).filter(group => group.skills.length);
+        codexSkills = sources.flatMap(group => group.skills.map(name => ({ name, source: group.source })));
+        document.querySelector('#skills-total').textContent = codexSkills.length;
+        document.querySelector('#skills-sources').textContent = sources.length;
+        skillsSource.innerHTML += sources.map(group => `<option value="${escapeHTML(group.source)}">${escapeHTML(group.source)} (${group.skills.length})</option>`).join('');
+        renderSkills();
+      }).catch(() => { skillsResults.textContent = 'The skill inventory could not be loaded.'; });
+      skillsSearch.addEventListener('input', renderSkills);
+      skillsSource.addEventListener('change', renderSkills);
+    </script>
+  </body>
+</html>
