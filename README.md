@@ -1,0 +1,18 @@
+# Credential Constellation
+
+A locally runnable, single-page showcase for certificates, badges, and learning milestones. Static browser assets live in `public/` so the site can deploy directly to Vercel.
+
+## Preview locally
+
+```powershell
+node scripts/server.mjs
+```
+
+Then open http://127.0.0.1:4173.
+
+## Features
+
+- 30 certificate, badge, and milestone images arranged in a responsive gallery
+- Filters for certificates, badges, and milestones
+- Search and full-size image previews
+- No build step or external runtime dependencies
