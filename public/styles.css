@@ -134,3 +134,44 @@ footer { flex-wrap:wrap; gap:24px; }
   .card { animation:none; }
   .card,.card img,.filter,.skill-card,.inventory-link { transition:none; }
 }
+
+/* Supporting detail keeps the poster typography, with room for longer reading. */
+.archive-nav { display:flex; flex-wrap:wrap; gap:12px 28px; padding-top:24px; }
+.archive-nav a,.about-links a { color:var(--ink); font:500 12px/1.6 "DM Mono",monospace; text-underline-offset:5px; }
+.archive-nav a { padding:7px 0; text-decoration:none; }
+.archive-nav a span { color:var(--orange); margin-left:6px; }
+.archive-nav a:hover { text-decoration:underline; }
+#collection,#about,#learning,#skills { scroll-margin-top:110px; }
+.collection-note,.learning-intro,.learning-note { max-width:68ch; color:var(--muted); font-size:15px; line-height:1.7; }
+.collection-note { margin:0 0 28px; }
+.about-archive { display:grid; grid-template-columns:1.2fr 1fr; gap:72px; padding:88px 0 100px; border-top:1px solid var(--ink); }
+.about-archive h2,.detail-heading { margin:24px 0; font-size:clamp(38px,5.5vw,72px); line-height:1.08; letter-spacing:-.06em; }
+.about-archive h2 i,.detail-heading i { color:var(--orange); font-style:normal; font-weight:500; }
+.about-archive p:not(.eyebrow) { max-width:56ch; color:var(--muted); font-size:15px; line-height:1.7; }
+.about-archive .about-intro { color:var(--ink); font-size:18px; }
+.about-links { display:flex; flex-wrap:wrap; gap:18px 26px; margin-top:28px; }
+.archive-facts { margin:0; align-self:center; }
+.archive-facts > div { padding:22px 0; border-top:1px solid var(--ink); }
+.archive-facts dt,.credential-facts dt { margin-bottom:9px; color:var(--muted); font:500 10px/1.4 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.archive-facts dd { margin:0; font-size:22px; line-height:1.35; letter-spacing:-.035em; }
+.archive-facts dd span { display:inline-block; margin-top:6px; color:var(--muted); font-size:14px; letter-spacing:normal; }
+.pathway-copy { min-width:0; }
+.pathway-list .pathway-evidence { margin-top:12px; color:var(--ink); font:11px/1.7 "DM Mono",monospace; }
+.learning-note { margin:28px 0 0; }
+.card-open { display:inline-flex; align-items:center; gap:16px; min-height:36px; padding:6px 0; margin-top:10px; border:0; border-bottom:1px solid currentColor; background:none; color:var(--night); cursor:pointer; font:500 10px/1.4 "DM Mono",monospace; }
+.card-open:focus-visible { outline-color:var(--night); }
+dialog { max-height:calc(100dvh - 36px); overflow:auto; }
+.dialog-image img { max-height:48vh; }
+#dialog-summary { line-height:1.7; max-width:70ch; }
+.credential-facts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px 30px; margin:25px 0; padding:22px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.credential-facts dd { margin:0; font:13px/1.6 "DM Mono",monospace; overflow-wrap:anywhere; }
+.dialog-copy .record-note { font:11px/1.7 "DM Mono",monospace; }
+@media (max-width:760px) {
+  .archive-nav { gap:6px 22px; }
+  #collection,#about,#learning,#skills { scroll-margin-top:235px; }
+  .about-archive { grid-template-columns:minmax(0,1fr); gap:36px; padding:64px 0 72px; }
+  .about-archive h2,.detail-heading { font-size:clamp(34px,8vw,56px); }
+  .pathway-copy { grid-column:2; }
+  .credential-facts { grid-template-columns:minmax(0,1fr); gap:18px; }
+  .dialog-copy { padding:24px; }
+}

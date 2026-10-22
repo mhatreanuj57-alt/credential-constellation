@@ -15,7 +15,8 @@ The visual identity borrows from experimental editorial typography: warm paper, 
 ## Features
 
 - **Searchable credentials:** search by title or provider, and filter certificates, badges, or milestones.
-- **Full-size previews:** open a credential in a native dialog, then follow its full-image link for closer inspection.
+- **Detailed previews:** open a credential for a short description, record type, available document dates and identifiers, and its full-size image.
+- **About the learner:** a short introduction, education details, and portfolio/contact links.
 - **Responsive gallery:** a three-column collection on desktop and two columns on smaller screens.
 - **Learning terrain:** four curated areas covering Generative AI, Claude & MCP, Data Science, and IBM Granite.
 - **Codex workflow atlas:** search installed workflows, filter their source collections, and follow repository links where available.
@@ -48,7 +49,7 @@ cd credential-constellation
 node scripts/server.mjs
 ```
 
-Open **http://127.0.0.1:4173/**. Stop the server with **Ctrl+C**.
+Open **http://127.0.0.1:4174/**. Set `PORT` to use another port. Stop the server with **Ctrl+C**.
 
 There is no `npm install` or `npm run build` step. Run the server from the repository root; it serves the `public/` directory. Use the local HTTP server instead of opening `index.html` directly, because the workflow atlas fetches its Markdown inventory.
 
@@ -74,12 +75,14 @@ credential-constellation/
 ## Add a credential
 
 1. Export a readable image of the certificate or badge and place it in `public/assets/credentials/`. Keep the original document separately and check for information you do not want published.
-2. Add an entry to the `credentials` array in `public/index.html`, following the existing order: title, provider, type, image filename. Supported types are `certificate`, `badge`, and `sticker`. Keep metadata as trusted plain text.
+2. Add an entry to the `credentials` array in `public/index.html`, following the existing order: title, provider, type, image filename. Supported types are `certificate`, `badge`, and `sticker`. Add a matching `credentialDetails` entry keyed by the image filename, with a short `summary`. Include `issued`, `expires`, `identifier`, or `kind` only when supported by the document. Keep metadata as trusted plain text.
 3. Update the static totals in the hero orbit, collection statistics, filter buttons, and initial results text. Change the provider count only when introducing a distinct provider label.
 4. Update this README's collection snapshot. The four learning paths are separate curated content; their count does not increase automatically with each credential.
 5. Run locally and check search, filtering, the full-size preview, and a narrow viewport before publishing.
 
 For workflow updates, preserve the existing `## owner/repository (count)` headings and `- skill-name` entries in `public/codex-installed-skills.md`. The page calculates workflow and source totals from that file; update the static heading and fallback numbers in `public/index.html` when the inventory changes.
+
+Run `node scripts/check-content.mjs` to check credential descriptions, image paths, metadata expectations, section anchors, and script syntax. Update the snapshot assertions when intentionally changing the collection. This check does not replace browser testing or independently verify credentials with their issuers.
 
 ## Deploy
 

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body id="top">
     <div class="grain" aria-hidden="true"></div>
     <header class="hero">
       <div class="identity-line">
@@ -35,6 +35,12 @@
         <div><dt>4</dt><dd>learning paths</dd></div>
         <div><dt>9</dt><dd>providers</dd></div>
       </dl>
+      <nav class="archive-nav" aria-label="Explore the archive">
+        <a href="#collection">Credentials <span aria-hidden="true">↘</span></a>
+        <a href="#about">About Anuj <span aria-hidden="true">↘</span></a>
+        <a href="#learning">Learning paths <span aria-hidden="true">↘</span></a>
+        <a href="#skills">Codex workflows <span aria-hidden="true">↘</span></a>
+      </nav>
     </header>
 
     <main>
@@ -49,29 +55,49 @@
         <label class="search"><span class="sr-only">Search credentials</span><input type="search" id="search" placeholder="Search the constellation" /><span>⌕</span></label>
       </section>
 
-      <section class="collection" aria-labelledby="collection-title">
+      <section class="collection" id="collection" aria-labelledby="collection-title">
         <div class="section-heading">
           <p class="eyebrow"><span></span> The collection</p>
           <h2 id="collection-title">From <i>curiosity</i><br />to <span class="type-block">capability.</span></h2>
           <p id="results" class="results">Showing all 33 credentials</p>
         </div>
+        <p class="collection-note">Each record tells a different part of the story: a course, a certification, a badge, or participation in an event. Open a card for context and the original image.</p>
         <div class="grid" id="credential-grid"></div>
       </section>
 
-      <section class="pathways">
-        <p class="eyebrow"><span></span> Learning terrain</p>
-        <div class="pathway-list">
-          <article><span>01</span><h3>Generative AI</h3><p>Foundations, fluency, prompting and large language models.</p></article>
-          <article><span>02</span><h3>Claude &amp; MCP</h3><p>Building with Claude, APIs, code workflows and context protocols.</p></article>
-          <article><span>03</span><h3>Data Science</h3><p>Python, visualization and practical data science essentials.</p></article>
-          <article><span>04</span><h3>IBM Granite</h3><p>Exploring enterprise models, classification and applied AI tools.</p></article>
+      <section class="about-archive" id="about" aria-labelledby="about-title">
+        <div>
+          <p class="eyebrow"><span></span> Behind the archive</p>
+          <h2 id="about-title">Anuj Mhatre.<br /><i>Still learning.</i></h2>
+          <p class="about-intro">I'm a B.Tech CSE (AI &amp; ML) student at CSMU, Navi Mumbai. This is where I document my learning across applied AI, data science, cloud foundations, and developer tools.</p>
+          <p>Credential Constellation brings the records together so the subject, provider, and original certificate are easy to find. It is a learning archive, not a claim that every course represents the same level of experience.</p>
+          <div class="about-links"><a href="https://anujmhatre.me" target="_blank" rel="noreferrer">Explore my portfolio ↗</a><a href="https://linkedin.com/in/anuj-mhatre-031807ma" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a></div>
         </div>
+        <dl class="archive-facts">
+          <div><dt>Studying</dt><dd>Computer Science &amp; Engineering<br /><span>Artificial Intelligence &amp; Machine Learning</span></dd></div>
+          <div><dt>Based at</dt><dd>CSMU, Navi Mumbai</dd></div>
+          <div><dt>Exploring</dt><dd>AI tools, data, cloud, and programming foundations</dd></div>
+          <div><dt>Built with</dt><dd>HTML, CSS &amp; JavaScript<br /><span>A lightweight, searchable personal archive.</span></dd></div>
+        </dl>
       </section>
 
-      <section class="skills-atlas" aria-labelledby="skills-title">
+      <section class="pathways" id="learning" aria-labelledby="learning-title">
+        <p class="eyebrow"><span></span> Learning terrain</p>
+        <h2 class="detail-heading" id="learning-title">Different paths.<br /><i>Connected curiosity.</i></h2>
+        <p class="learning-intro">Four themes connect the AI and data records in this collection. They are curated subject groupings, not formal qualifications or a required course sequence.</p>
+        <div class="pathway-list">
+          <article><span>01</span><h3>Generative AI</h3><div class="pathway-copy"><p>Foundational learning around generative AI, large language models, and prompting, alongside AI fluency for students and educators.</p><p class="pathway-evidence">In the archive: Introduction to Generative AI · Generative AI Essentials · Prompt Engineering</p></div></article>
+          <article><span>02</span><h3>Claude &amp; MCP</h3><div class="pathway-copy"><p>Learning across the Claude ecosystem: its API, platform, coding tools, and Model Context Protocol (MCP).</p><p class="pathway-evidence">In the archive: Claude API · Claude Code in Action · MCP Introduction · MCP Advanced</p></div></article>
+          <article><span>03</span><h3>Data Science</h3><div class="pathway-copy"><p>Data science foundations, Python for data work, and visualization. These records document the building blocks behind working with data.</p><p class="pathway-evidence">In the archive: Data Science Foundations · Python for Data Science · Data Visualization</p></div></article>
+          <article><span>04</span><h3>IBM Granite</h3><div class="pathway-copy"><p>Exploration of IBM Granite and classification, represented by milestone stickers rather than formal certification records.</p><p class="pathway-evidence">In the archive: Granite · Granite Classification</p></div></article>
+        </div>
+        <p class="learning-note">Beyond these four themes, the collection includes GitHub Foundations, Oracle Java, Cisco JavaScript, AWS learning and participation records, and Agile Methodologies.</p>
+      </section>
+
+      <section class="skills-atlas" id="skills" aria-labelledby="skills-title">
         <div class="skills-heading">
           <div><p class="eyebrow"><span></span> Codex capability atlas</p><h2 id="skills-title"><span class="type-outline">471</span> skills.<br /><i>One working mind.</i></h2></div>
-          <p>Every installed Codex workflow in this setup—covering engineering discipline, design systems, cloud platforms, automation, AI, and developer tooling.</p>
+          <p>Installed Codex workflows for engineering, design, cloud platforms, automation, and AI. This is a tooling inventory—not a list of personal certifications or independently assessed skills.</p>
         </div>
         <dl class="skills-stats" aria-label="Codex skills statistics">
           <div><dt id="skills-total">471</dt><dd>registered skills</dd></div>
@@ -94,10 +120,17 @@
       <p class="footer-initials"><span class="sr-only">Anuj Mhatre</span><span aria-hidden="true">AM<i>.</i></span></p>
     </footer>
 
-    <dialog id="credential-dialog" aria-labelledby="dialog-title">
+    <dialog id="credential-dialog" aria-labelledby="dialog-title" aria-describedby="dialog-summary">
       <button class="close" id="close-dialog" aria-label="Close preview">×</button>
       <div class="dialog-image"><img id="dialog-img" alt="" /></div>
-      <div class="dialog-copy"><p class="eyebrow"><span></span> Credential preview</p><h2 id="dialog-title"></h2><p id="dialog-meta"></p><a id="open-image" target="_blank" rel="noreferrer">Open full image ↗</a></div>
+      <div class="dialog-copy">
+        <p class="eyebrow"><span></span> Credential details</p>
+        <h2 id="dialog-title"></h2><p id="dialog-meta"></p>
+        <p id="dialog-summary"></p>
+        <dl class="credential-facts" id="dialog-facts"></dl>
+        <p class="record-note">Descriptions summarize the archive record. Dates and identifiers, where shown, are transcribed from the supplied document; issuer verification has not been independently checked.</p>
+        <a id="open-image" target="_blank" rel="noreferrer">Open original image ↗</a>
+      </div>
     </dialog>
     <script>
       const credentials = [
@@ -108,6 +141,41 @@
         ['AWS Workshop Participation (CSMU)','AWS Builder Center','certificate','aws-cloud-club-csmu-workshop-cert.png'],
         ['AI Fluency for Educators','Anthropic','certificate','ai-fluency-educators-cert.png'],['AI Fluency for Students','Anthropic','certificate','ai-fluency-students-cert.png'],['AI Fundamentals','IBM','certificate','ai-fundamentals-cert.png'],['AWS Certified Data Engineer - Associate Exam Prep','AWS Training & Certification','certificate','aws-data-engineer-associate-cert.png'],['AWS Cloud Practitioner Essentials','AWS Training & Certification','certificate','aws-cloud-practitioner-essentials-cert.png'],['Claude AI Fluency','Anthropic','certificate','claude-ai-fluency-cert.png'],['Claude API','Anthropic','certificate','claude-api-cert.png'],['Claude Fundamentals','Anthropic','certificate','claude-cert.png'],['Claude Code 101','Anthropic','certificate','claude-code-101-cert.png'],['Claude Code in Action','Anthropic','certificate','claude-code-in-action-cert.png'],['Claude Cowork','Anthropic','certificate','claude-cowork-cert.png'],['Claude Platform 101','Anthropic','certificate','claude-platform-101-cert.png'],['Introduction to Generative AI','Google','badge','google-intro-genai-badge.png'],['Introduction to Large Language Models','Google','badge','google-intro-llm-badge.png'],['Agile Methodologies','IBM Career Education Program','certificate','ibm-agile-methodologies-cert.png'],['Data Science 101','IBM','certificate','ibm-data-science-101-cert.png'],['Data Science','IBM','badge','ibm-data-science-badge.png'],['Data Science Foundations','IBM','certificate','ibm-data-science-cert.png'],['Data Visualization','IBM','certificate','ibm-dataviz-cert.png'],['Generative AI Essentials','IBM','badge','ibm-genai-essentials-badge.png'],['Generative AI Essentials','IBM','certificate','ibm-genai-essentials-cert.png'],['Granite Classification','IBM','sticker','ibm-granite-classify-sticker.png'],['Granite','IBM','sticker','ibm-granite-sticker.png'],['Large Language Models','IBM','sticker','ibm-llm-sticker.png'],['Prompt Engineering','IBM','badge','ibm-prompt-badge.png'],['Python for Data Science','IBM','certificate','ibm-python-cert.png'],['MCP Advanced','Anthropic','certificate','mcp-advanced-cert.png'],['MCP Introduction','Anthropic','certificate','mcp-intro-cert.png']
       ].map(([title, provider, type, image]) => ({ title, provider, type, image }));
+      const credentialDetails = {
+        'github-foundations-cert.png': { summary: 'GitHub Foundations certification record issued in the name of Anuj Avinash Mhatre. The supplied document lists an earned date and an expiry date.', issued: '5 April 2026', expires: '6 April 2028', identifier: '352072AE5791141E', kind: 'Certification' },
+        'oracle-java-foundations-cert.png': { summary: 'Oracle University certificate of recognition for Java Certified Foundations Associate, issued to Anuj Avinash Mhatre.', issued: '19 May 2026', identifier: '319310206JAVA8OJA', kind: 'Certification' },
+        'cisco-javascript-essentials-1-cert.png': { summary: 'Completion of JavaScript Essentials 1, offered by Aditya University through the Cisco Networking Academy program. The document names Ganapathi Durga Sai Prasad as the instructor.', issued: '14 April 2026', kind: 'Course completion' },
+        'aws-cloud-club-csmu-hackathon-cert.png': { summary: 'Participation in the hackathon conducted by AWS Cloud Club at Chhatrapati Shivaji Maharaj University. This records participation, not a competition placement or an AWS certification.', kind: 'Event participation' },
+        'aws-cloud-club-csmu-workshop-cert.png': { summary: 'Participation in an AWS workshop at CSMU. This is an event participation record, not an AWS certification exam result.', kind: 'Workshop participation' },
+        'ai-fluency-educators-cert.png': { summary: 'An Anthropic learning record for AI Fluency for Educators, part of the archive’s education-focused AI learning.' },
+        'ai-fluency-students-cert.png': { summary: 'An Anthropic learning record for AI Fluency for Students, part of the archive’s student-focused AI learning.' },
+        'ai-fundamentals-cert.png': { summary: 'An IBM learning record focused on artificial intelligence fundamentals.' },
+        'aws-data-engineer-associate-cert.png': { summary: 'Exam-preparation learning for AWS Certified Data Engineer - Associate. This record does not establish that the certification exam was passed.', kind: 'Exam preparation' },
+        'aws-cloud-practitioner-essentials-cert.png': { summary: 'An AWS Cloud Practitioner Essentials learning record. Course completion is distinct from passing the AWS Certified Cloud Practitioner exam.', kind: 'Course completion' },
+        'claude-ai-fluency-cert.png': { summary: 'An Anthropic learning record for Claude AI Fluency, within the collection’s broader AI fluency theme.' },
+        'claude-api-cert.png': { summary: 'An Anthropic learning record focused on the Claude API.' },
+        'claude-cert.png': { summary: 'An Anthropic learning record for Claude Fundamentals.' },
+        'claude-code-101-cert.png': { summary: 'An introductory Claude Code learning record from Anthropic.' },
+        'claude-code-in-action-cert.png': { summary: 'An Anthropic learning record for Claude Code in Action, grouped with the archive’s coding-tool learning.' },
+        'claude-cowork-cert.png': { summary: 'An Anthropic learning record for Claude Cowork.' },
+        'claude-platform-101-cert.png': { summary: 'An introductory Claude platform learning record from Anthropic.' },
+        'google-intro-genai-badge.png': { summary: 'A Google learning badge for Introduction to Generative AI. The badge is preserved here as a compact learning record.' },
+        'google-intro-llm-badge.png': { summary: 'A Google learning badge for Introduction to Large Language Models.' },
+        'ibm-agile-methodologies-cert.png': { summary: 'An Agile Methodologies learning record from the IBM Career Education Program.' },
+        'ibm-data-science-101-cert.png': { summary: 'An introductory Data Science 101 learning record from IBM.' },
+        'ibm-data-science-badge.png': { summary: 'An IBM Data Science badge. It is a separate archive item from the collection’s data science certificates.' },
+        'ibm-data-science-cert.png': { summary: 'An IBM learning record for Data Science Foundations.' },
+        'ibm-dataviz-cert.png': { summary: 'An IBM learning record focused on data visualization.' },
+        'ibm-genai-essentials-badge.png': { summary: 'An IBM Generative AI Essentials badge, retained alongside the related certificate as a separate visual record.' },
+        'ibm-genai-essentials-cert.png': { summary: 'An IBM learning record for Generative AI Essentials.' },
+        'ibm-granite-classify-sticker.png': { summary: 'A milestone sticker associated with IBM Granite classification learning. It is not presented as a formal certification.' },
+        'ibm-granite-sticker.png': { summary: 'A milestone sticker associated with IBM Granite exploration, rather than a formal certification.' },
+        'ibm-llm-sticker.png': { summary: 'An IBM milestone sticker associated with large language model learning, rather than a formal certification.' },
+        'ibm-prompt-badge.png': { summary: 'An IBM learning badge focused on prompt engineering.' },
+        'ibm-python-cert.png': { summary: 'An IBM learning record for Python for Data Science, grouped with the archive’s data foundations.' },
+        'mcp-advanced-cert.png': { summary: 'An Anthropic learning record for MCP Advanced, part of the Model Context Protocol learning theme.' },
+        'mcp-intro-cert.png': { summary: 'An Anthropic learning record for MCP Introduction, part of the Model Context Protocol learning theme.' }
+      };
       const grid = document.querySelector('#credential-grid');
       const result = document.querySelector('#results');
       const search = document.querySelector('#search');
@@ -117,11 +185,38 @@
         const query = search.value.trim().toLowerCase();
         const visible = credentials.filter(item => (activeFilter === 'all' || item.type === activeFilter) && `${item.title} ${item.provider}`.toLowerCase().includes(query));
         result.textContent = visible.length === credentials.length ? `Showing all ${credentials.length} credentials` : `Showing ${visible.length} of ${credentials.length} credentials`;
-        grid.innerHTML = visible.length ? visible.map((item, index) => `<article class="card" style="animation-delay:${Math.min(index * 30, 300)}ms" data-image="assets/credentials/${item.image}" data-title="${item.title}" data-meta="${item.provider} · ${item.type}"><img src="assets/credentials/${item.image}" alt="${item.title} from ${item.provider}" loading="lazy"><div class="card-info"><span class="tag ${item.type}">${item.type}</span><h3>${item.title}</h3><p>${item.provider}</p></div></article>`).join('') : '<p class="empty">No signal found. Try another search.</p>';
+        grid.innerHTML = visible.length ? visible.map((item, index) => `<article class="card" style="animation-delay:${Math.min(index * 30, 300)}ms" data-image="assets/credentials/${item.image}" data-title="${item.title}" data-meta="${item.provider} · ${item.type}"><img src="assets/credentials/${item.image}" alt="${item.title} from ${item.provider}" loading="lazy"><div class="card-info"><span class="tag ${item.type}">${item.type}</span><h3>${item.title}</h3><p>${item.provider}</p><button class="card-open" type="button" aria-haspopup="dialog" aria-label="View details: ${item.title}">View details <span aria-hidden="true">↗</span></button></div></article>`).join('') : '<p class="empty">No signal found. Try another search.</p>';
       }
       document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { activeFilter = button.dataset.filter; document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); render(); }));
       search.addEventListener('input', render);
-      grid.addEventListener('click', event => { const card = event.target.closest('.card'); if (!card) return; document.querySelector('#dialog-img').src = card.dataset.image; document.querySelector('#dialog-img').alt = card.dataset.title; document.querySelector('#dialog-title').textContent = card.dataset.title; document.querySelector('#dialog-meta').textContent = card.dataset.meta; document.querySelector('#open-image').href = card.dataset.image; dialog.showModal(); });
+      grid.addEventListener('click', event => {
+        const card = event.target.closest('.card');
+        if (!card) return;
+        const item = credentials.find(item => `assets/credentials/${item.image}` === card.dataset.image);
+        if (!item) return;
+        const details = credentialDetails[item.image] || {};
+        document.querySelector('#dialog-img').src = card.dataset.image;
+        document.querySelector('#dialog-img').alt = item.title;
+        document.querySelector('#dialog-title').textContent = item.title;
+        document.querySelector('#dialog-meta').textContent = item.provider;
+        document.querySelector('#dialog-summary').textContent = details.summary || 'A learning record from this personal archive. See the original image for the document details.';
+        const facts = document.querySelector('#dialog-facts');
+        facts.replaceChildren();
+        const kind = details.kind || ({ certificate: 'Learning certificate', badge: 'Learning badge', sticker: 'Milestone sticker' })[item.type];
+        for (const [label, value] of [['Record type', kind], ['Issued / completed', details.issued], ['Expires', details.expires], ['Credential identifier', details.identifier]]) {
+          if (!value) continue;
+          const row = document.createElement('div');
+          const term = document.createElement('dt');
+          const definition = document.createElement('dd');
+          term.textContent = label;
+          definition.textContent = value;
+          row.append(term, definition);
+          facts.append(row);
+        }
+        document.querySelector('#open-image').href = card.dataset.image;
+        card.querySelector('.card-open').focus({ preventScroll: true });
+        dialog.showModal();
+      });
       document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
       dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
       render();
