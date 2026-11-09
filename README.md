@@ -17,6 +17,9 @@ The visual identity borrows from experimental editorial typography: warm paper, 
 - **Searchable credentials:** search by title or provider, and filter certificates, badges, or milestones.
 - **Detailed previews:** open a credential for a short description, record type, available document dates and identifiers, and its full-size image.
 - **About the learner:** a short introduction, education details, and portfolio/contact links.
+- **Profile and direction:** a profile photo, career direction, technical skills, and soft-skill learning focus.
+- **Learning journey:** dated milestones transcribed from supplied documents, with undated records clearly marked.
+- **Separate credential pages:** `/certificates`, `/badges`, and `/milestones` each open a filtered archive view.
 - **Responsive gallery:** a three-column collection on desktop and two columns on smaller screens.
 - **Learning terrain:** four curated areas covering Generative AI, Claude & MCP, Data Science, and IBM Granite.
 - **Codex workflow atlas:** search installed workflows, filter their source collections, and follow repository links where available.
@@ -49,7 +52,7 @@ cd credential-constellation
 node scripts/server.mjs
 ```
 
-Open **http://127.0.0.1:4174/**. Set `PORT` to use another port. Stop the server with **Ctrl+C**.
+Open **http://127.0.0.1:4174/**. The category pages are available at `/certificates`, `/badges`, and `/milestones`. Set `PORT` to use another port. Stop the server with **Ctrl+C**.
 
 There is no `npm install` or `npm run build` step. Run the server from the repository root; it serves the `public/` directory. Use the local HTTP server instead of opening `index.html` directly, because the workflow atlas fetches its Markdown inventory.
 
@@ -67,7 +70,7 @@ credential-constellation/
 │   └── assets/credentials/        # Certificate, badge, and milestone images
 ├── scripts/server.mjs             # Dependency-free local preview server
 ├── docs/                          # Project notes and earlier planning documents
-├── vercel.json                    # Publishes public/ as the output directory
+├── vercel.json                    # Publishes public/ and routes credential category pages
 ├── .vercelignore                  # Excludes local launch-video output folders
 └── LICENSE
 ```
