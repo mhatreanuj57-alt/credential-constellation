@@ -145,6 +145,39 @@ footer { flex-wrap:wrap; gap:24px; }
 .collection-note,.learning-intro,.learning-note { max-width:68ch; color:var(--muted); font-size:15px; line-height:1.7; }
 .collection-note { margin:0 0 28px; }
 .about-archive { display:grid; grid-template-columns:1.2fr 1fr; gap:72px; padding:88px 0 100px; border-top:1px solid var(--ink); }
+.about-photo { display:block; width:148px; height:148px; margin:26px 0 22px; border:1px solid var(--ink); border-radius:50%; object-fit:cover; filter:grayscale(1); }
+.career-direction { max-width:56ch; margin-top:24px; padding:17px 0 0; border-top:1px solid var(--ink); }
+.career-direction > span,.skill-groups h3,.journey-list time,.journey-current > span { font:500 10px/1.5 "DM Mono",monospace; letter-spacing:.08em; text-transform:uppercase; }
+.career-direction p { margin:8px 0 0; }
+.skill-groups { display:grid; grid-template-columns:1fr 1fr; gap:36px; margin-top:36px; }
+.skill-groups section { padding-top:15px; border-top:1px solid var(--ink); }
+.skill-groups h3 { margin:0 0 15px; }
+.skill-groups ul { display:flex; flex-wrap:wrap; gap:8px; list-style:none; margin:0; padding:0; }
+.skill-groups li { padding:8px 10px; border:1px solid var(--ink); font:11px/1.4 "DM Mono",monospace; }
+.journey { padding:88px 0 100px; border-top:1px solid var(--ink); }
+.journey-note { max-width:68ch; color:var(--muted); font-size:14px; line-height:1.7; }
+.journey-list { list-style:none; margin:38px 0 0; padding:0; border-top:1px solid var(--ink); }
+.journey-list li { display:grid; grid-template-columns:190px minmax(0,1fr); gap:24px; padding:22px 0; border-bottom:1px solid var(--ink); }
+.journey-list time,.journey-current > span { color:var(--orange); }
+.journey-list h3 { margin:0 0 7px; font-size:clamp(19px,2.4vw,30px); letter-spacing:-.055em; }
+.journey-list p { margin:0; color:var(--muted); font-size:13px; line-height:1.6; }
+.journey-current > span { color:var(--ink); }
+.category-banner { padding:46px 0 12px; }
+.category-banner h1 { max-width:100%; margin:24px 0 13px; font-size:clamp(42px,7vw,88px); line-height:.92; letter-spacing:-.09em; overflow-wrap:anywhere; text-transform:uppercase; }
+.category-banner > p:last-child { max-width:60ch; color:var(--muted); font-size:15px; line-height:1.65; }
+.category-page .hero { min-height:0; padding-bottom:18px; }
+.category-page .hero-copy,.category-page .stats { display:none; }
+.category-page .category-banner:not([hidden]) { display:block; }
+.category-page .archive-nav { padding-bottom:14px; border-bottom:1px solid var(--ink); }
+.category-page .about-archive,.category-page .journey,.category-page .pathways,.category-page .skills-atlas { display:none; }
+.category-page .collection { padding:55px 0 90px; }
+.category-page .section-heading { display:block; }
+.category-page .section-heading h2 { display:none; }
+.category-page .section-heading .results { margin:0; }
+.category-page .collection-note { margin-top:22px; }
+.category-page .controls { position:relative; }
+.category-page .filters { display:none; }
+.category-page .controls { justify-content:space-between; }
 .about-archive h2,.detail-heading { margin:24px 0; font-size:clamp(38px,5.5vw,72px); line-height:1.08; letter-spacing:-.06em; }
 .about-archive h2 i,.detail-heading i { color:var(--orange); font-style:normal; font-weight:500; }
 .about-archive p:not(.eyebrow) { max-width:56ch; color:var(--muted); font-size:15px; line-height:1.7; }
@@ -170,8 +203,14 @@ dialog { max-height:calc(100dvh - 36px); overflow:auto; }
   .archive-nav { gap:6px 22px; }
   #collection,#about,#learning,#skills { scroll-margin-top:235px; }
   .about-archive { grid-template-columns:minmax(0,1fr); gap:36px; padding:64px 0 72px; }
+  .about-photo { width:118px; height:118px; }
   .about-archive h2,.detail-heading { font-size:clamp(34px,8vw,56px); }
   .pathway-copy { grid-column:2; }
   .credential-facts { grid-template-columns:minmax(0,1fr); gap:18px; }
   .dialog-copy { padding:24px; }
+  .journey { padding:64px 0 72px; }
+  .journey-list li { grid-template-columns:1fr; gap:8px; }
+  .skill-groups { grid-template-columns:1fr; gap:26px; }
+  .category-banner { padding-top:28px; }
+  .category-banner h1 { font-size:clamp(28px,7vw,56px); overflow-wrap:normal; white-space:nowrap; }
 }
