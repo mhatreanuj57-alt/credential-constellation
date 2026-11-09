@@ -36,11 +36,20 @@
         <div><dt>9</dt><dd>providers</dd></div>
       </dl>
       <nav class="archive-nav" aria-label="Explore the archive">
+        <a href="/">Home <span aria-hidden="true">↘</span></a>
+        <a href="/certificates">Certificates <span aria-hidden="true">↗</span></a>
+        <a href="/badges">Badges <span aria-hidden="true">↗</span></a>
+        <a href="/milestones">Milestones <span aria-hidden="true">↗</span></a>
         <a href="#collection">Credentials <span aria-hidden="true">↘</span></a>
-        <a href="#about">About Anuj <span aria-hidden="true">↘</span></a>
-        <a href="#learning">Learning paths <span aria-hidden="true">↘</span></a>
-        <a href="#skills">Codex workflows <span aria-hidden="true">↘</span></a>
+        <a href="/#about">About me <span aria-hidden="true">↘</span></a>
+        <a href="/#journey">Learning journey <span aria-hidden="true">↘</span></a>
+        <a href="/#skills">My skills <span aria-hidden="true">↘</span></a>
       </nav>
+      <div class="category-banner" id="category-banner" hidden>
+        <p class="eyebrow"><span></span> Credential Constellation</p>
+        <h1 id="category-title">Credentials</h1>
+        <p id="category-description"></p>
+      </div>
     </header>
 
     <main>
@@ -68,9 +77,11 @@
       <section class="about-archive" id="about" aria-labelledby="about-title">
         <div>
           <p class="eyebrow"><span></span> Behind the archive</p>
+          <img class="about-photo" src="https://avatars.githubusercontent.com/u/210357795?v=4" alt="Anuj Mhatre" loading="lazy" />
           <h2 id="about-title">Anuj Mhatre.<br /><i>Still learning.</i></h2>
           <p class="about-intro">I'm a B.Tech CSE (AI &amp; ML) student at CSMU, Navi Mumbai. This is where I document my learning across applied AI, data science, cloud foundations, and developer tools.</p>
           <p>Credential Constellation brings the records together so the subject, provider, and original certificate are easy to find. It is a learning archive, not a claim that every course represents the same level of experience.</p>
+          <div class="career-direction"><span>Career direction</span><p>Exploring work that brings AI and machine learning together with software engineering, while building stronger foundations in programming, data, and cloud.</p></div>
           <div class="about-links"><a href="https://anujmhatre.me" target="_blank" rel="noreferrer">Explore my portfolio ↗</a><a href="https://linkedin.com/in/anuj-mhatre-031807ma" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a></div>
         </div>
         <dl class="archive-facts">
@@ -79,6 +90,18 @@
           <div><dt>Exploring</dt><dd>AI tools, data, cloud, and programming foundations</dd></div>
           <div><dt>Built with</dt><dd>HTML, CSS &amp; JavaScript<br /><span>A lightweight, searchable personal archive.</span></dd></div>
         </dl>
+      </section>
+
+      <section class="journey" id="journey" aria-labelledby="journey-title">
+        <p class="eyebrow"><span></span> Learning in motion</p>
+        <h2 class="detail-heading" id="journey-title">A path made<br /><i>one milestone at a time.</i></h2>
+        <p class="journey-note">Dates below are transcribed from the supplied records. Other archive items are included without dates where the source document did not show one.</p>
+        <ol class="journey-list">
+          <li><time datetime="2026-04-05">05 Apr 2026</time><div><h3>GitHub Foundations</h3><p>GitHub Foundations certification record · GitHub / Microsoft</p></div></li>
+          <li><time datetime="2026-04-14">14 Apr 2026</time><div><h3>JavaScript Essentials 1</h3><p>Course completion · Cisco Networking Academy</p></div></li>
+          <li><time datetime="2026-05-19">19 May 2026</time><div><h3>Java Certified Foundations Associate</h3><p>Certificate of recognition · Oracle University</p></div></li>
+          <li class="journey-current"><span>Ongoing · undated records</span><div><h3>AI, data &amp; cloud exploration</h3><p>Additional Anthropic, Google, IBM, and AWS learning records are in the archive; their completion dates were not listed in the supplied items.</p></div></li>
+        </ol>
       </section>
 
       <section class="pathways" id="learning" aria-labelledby="learning-title">
@@ -95,6 +118,16 @@
       </section>
 
       <section class="skills-atlas" id="skills" aria-labelledby="skills-title">
+        <div class="personal-skills">
+          <div class="skills-heading">
+            <div><p class="eyebrow"><span></span> Skills I’m developing</p><h2 id="personal-skills-title">My <i>skills.</i></h2></div>
+            <p>Areas represented by the learning records here. A course or badge shows learning activity, not a formal assessment of professional proficiency.</p>
+          </div>
+          <div class="skill-groups">
+            <section><h3>Technical</h3><ul><li>Java</li><li>JavaScript</li><li>Python for data science</li><li>Generative AI &amp; LLM foundations</li><li>Prompt engineering</li><li>Claude API &amp; MCP</li><li>Data science &amp; visualization</li><li>GitHub foundations</li><li>AWS cloud foundations</li></ul></section>
+            <section><h3>Soft skills · learning focus</h3><ul><li>Self-directed learning</li><li>Curiosity and experimentation</li><li>Adaptability with new tools</li><li>Collaborative participation</li><li>Agile fundamentals</li></ul></section>
+          </div>
+        </div>
         <div class="skills-heading">
           <div><p class="eyebrow"><span></span> Codex capability atlas</p><h2 id="skills-title"><span class="type-outline">471</span> skills.<br /><i>One working mind.</i></h2></div>
           <p>Installed Codex workflows for engineering, design, cloud platforms, automation, and AI. This is a tooling inventory—not a list of personal certifications or independently assessed skills.</p>
@@ -180,11 +213,21 @@
       const result = document.querySelector('#results');
       const search = document.querySelector('#search');
       const dialog = document.querySelector('#credential-dialog');
-      let activeFilter = 'all';
+      const categoryRoutes = { '/certificates': 'certificate', '/badges': 'badge', '/milestones': 'sticker' };
+      const categoryType = categoryRoutes[location.pathname.replace(/\/$/, '')];
+      const category = { certificate: ['Certificates', 'Course records, certifications, exam preparation, and participation documents in the collection.'], badge: ['Badges', 'Digital learning badges collected across AI, data science, and prompt engineering.'], sticker: ['Milestones', 'IBM Granite and large language model milestone stickers in the archive.'] }[categoryType];
+      let activeFilter = categoryType || 'all';
+      if (categoryType) {
+        document.body.classList.add('category-page');
+        document.title = `${category[0]} | Credential Constellation`;
+        document.querySelector('#category-banner').hidden = false;
+        document.querySelector('#category-title').textContent = category[0];
+        document.querySelector('#category-description').textContent = category[1];
+      }
       function render() {
         const query = search.value.trim().toLowerCase();
         const visible = credentials.filter(item => (activeFilter === 'all' || item.type === activeFilter) && `${item.title} ${item.provider}`.toLowerCase().includes(query));
-        result.textContent = visible.length === credentials.length ? `Showing all ${credentials.length} credentials` : `Showing ${visible.length} of ${credentials.length} credentials`;
+        result.textContent = categoryType ? `Showing ${visible.length} ${category[0].toLowerCase()}` : visible.length === credentials.length ? `Showing all ${credentials.length} credentials` : `Showing ${visible.length} of ${credentials.length} credentials`;
         grid.innerHTML = visible.length ? visible.map((item, index) => `<article class="card" style="animation-delay:${Math.min(index * 30, 300)}ms" data-image="assets/credentials/${item.image}" data-title="${item.title}" data-meta="${item.provider} · ${item.type}"><img src="assets/credentials/${item.image}" alt="${item.title} from ${item.provider}" loading="lazy"><div class="card-info"><span class="tag ${item.type}">${item.type}</span><h3>${item.title}</h3><p>${item.provider}</p><button class="card-open" type="button" aria-haspopup="dialog" aria-label="View details: ${item.title}">View details <span aria-hidden="true">↗</span></button></div></article>`).join('') : '<p class="empty">No signal found. Try another search.</p>';
       }
       document.querySelectorAll('.filter').forEach(button => button.addEventListener('click', () => { activeFilter = button.dataset.filter; document.querySelector('.filter.active').classList.remove('active'); button.classList.add('active'); render(); }));
